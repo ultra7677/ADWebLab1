@@ -49,5 +49,6 @@ Tomcat is started on tcp port 8080, so if we type `http://localhost:8080/hello` 
 ####Spring Web MVC  
 Until now, we have not use Model and View in our application, and that is what we will going to do in this section.  
 The Spring Web model-view-controller (MVC) framework is designed around a `DispatcherServlet` that dispatches requests to handlers (ususally are `@Controller` and `@RequestMapping` annotations), and the workflow of this process is showing below.  
+![work-flow-SpringMVC](https://raw.githubusercontent.com/ultra7677/ADWebLab1/master/images/work-flow-SpringMVC.jpg)
 
 
