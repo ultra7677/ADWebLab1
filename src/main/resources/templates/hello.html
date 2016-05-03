@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Hello</title>
+<script type="text/javascript" th:src="@{/jquery-2.1.4/jquery-2.1.4.min.js}"></script>
+<script type="text/javascript" th:src="@{/bootstrap-3.3.5/js/bootstrap.min.js}"></script>
+<link rel="stylesheet" th:href="@{/bootstrap-3.3.5/css/bootstrap.min.css}"></link>
+</head>
+<body>
+	<form class="greeting-form"  action="#" th:action="@{/greeting}" th:object="${greetingForm}"  method = "POST">
+		<div class="input-field-group">
+			<div class="input-label">Please Input Your Name</div>
+			<input class="form-control" type="text" th:field="*{name}" th:value="${greetingForm.name}"/>
+		</div>
+		<button class="btn btn-primary" type="submit">Submit</button>
+	</form>
+</body>
+</html>
