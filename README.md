@@ -92,12 +92,12 @@ We have already known that `@RequestMapping` is used for mapping a http request 
 &lt;link rel="stylesheet" th:href="@{/bootstrap-3.3.5/css/bootstrap.min.css}"&gt;&lt;/link&gt;
 &lt;/head&gt;
 &lt;body&gt;
-	&lt;form class="greeting-form" action="#" th:action="@{/greeting}" th:object="${greetingForm}" method = "POST">
-		<div class="input-field-group">
-			<div class="input-label">
+	&lt;form class="greeting-form" action="#" th:action="@{/greeting}" th:object="${greetingForm}" method = "POST"&gt;
+		&lt;div class="input-field-group"&gt;
+			&lt;div class="input-label"&gt;
 				Please Input Your Name
-			</div>
-			<input class="form-control" type="text" th:field="*{name}" th:value="${greetingForm.name}">
+			&lt;/div&gt;
+			&lt;input class="form-control" type="text" th:field="*{name}" th:value="${greetingForm.name}"&gt;
 		&lt;/div&gt;
 		&lt;button class="btn btn-primary" type="submit"&gt;Submit&lt;/button&gt;
 	&lt;/form&gt;
@@ -114,7 +114,9 @@ And we should add this dependency in our pom.xml in order to use Thymeleaf in ou
   		<artifactId>spring-boot-starter-thymeleaf</artifactId>
 	</dependency>
 
-`hello.html` looks like that
+`hello.html` looks like that  
+
+![hellp-page](https://raw.githubusercontent.com/ultra7677/ADWebLab1/master/images/hello-page.jpg)  
 
 The input form in html page can be seen as the "V" in MVC, and when user input their name and click submit button, a HTTP POST request with filled-in user name contained in `greetingForm` model will send to the controller, and method `editGreetingForm` will handle this request, and use user name to generate greeting content, and then return this model to "greeting" page.  
 
@@ -134,9 +136,11 @@ The input form in html page can be seen as the "V" in MVC, and when user input t
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
+  
+![greeting](https://raw.githubusercontent.com/ultra7677/ADWebLab1/master/images/greeting.jpg)
 
 As we can see, we can easilly use the values of model to generate a view, and this is the end of my application, you can check all the codes in my github repository. 
- 
+
 ---
 Reference:  
 1. [SpringBoot Documents](http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle)  
