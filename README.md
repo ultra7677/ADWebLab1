@@ -80,6 +80,29 @@ public class GreetingController {
 
 We have already known that `@RequestMapping` is used for mapping a http request to a hanlding method, and in `showPage` method, we handle the request for the html page `hello.html` and provide a model (GreetingForm) as part of the return response.  
 
+`GreetingForm.java`
+
+<pre><code>package model;
+public class GreetingForm {
+	private String content;
+	private String name;
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+}
+</code></pre>
+
+And this is the code of our model `GreetingForm`, it has two attributes content and name, method `showPage` generates a object of this model and provides it to view, and in our html file, we can use `<input>` with `th:field` tag directly fill this model with input data.  
+
 ---
 ####Thymeleaf  
 `hello.html`
@@ -139,7 +162,9 @@ The input form in html page can be seen as the "V" in MVC, and when user input t
   
 ![greeting](https://raw.githubusercontent.com/ultra7677/ADWebLab1/master/images/greeting.jpg)
 
-As we can see, we can easilly use the values of model to generate a view, and this is the end of my application, you can check all the codes in my github repository. 
+As we can see, we can easilly use the values of a model to generate a view, and sumbit a form to existing model in a view.  
+
+This is the end of my application, you can check all the codes in my github repository. 
 
 ---
 Reference:  
